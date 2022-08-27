@@ -1,0 +1,69 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class MyFrame extends JFrame implements ActionListener {
+     JButton mybutton;
+     JLabel label;
+        public MyFrame(){
+
+         /* this.setTitle("This is the TITLE");//setting the title
+            this.setLayout(null);
+            this.setSize(750,750);//setting the size
+            this.setResizable(true);//prevent resizing
+            this.setVisible(true);//making sure the this pops up
+          //"X" will close the app
+
+            //ImageIcon image = new ImageIcon(new FileInputStream("img/1 - k34OMjQ.png)"));
+            ImageIcon image = new ImageIcon("src/iconFortnite.jpg"); //create an image icon
+            this.setIconImage(image.getImage());//change the icon
+            // this.getContentPane().setBackground(Color.green);//change background of the color
+            // this.getContentPane().setBackground(new Color(233,230,216));
+            this.getContentPane().setBackground(new Color(0xFFFDD0));
+
+            //setting layout
+*/
+            label = new JLabel();
+
+            ImageIcon icon = new ImageIcon("src/iconFortnite.jpg");
+            ImageIcon buttonimg = new ImageIcon("src/iconFortnite.jpg");
+
+            label.setIcon(icon);
+            label.setBounds(150,250,150,150);
+            label.setVisible(false);
+
+            mybutton = new JButton();
+            mybutton.setBounds(200,100,350,200);
+            mybutton.addActionListener(this::actionPerformed);
+            mybutton.setText("CLICK ME!");
+            mybutton.setFocusable(false);
+            mybutton.setIcon(buttonimg);
+            mybutton.setHorizontalTextPosition(JButton.CENTER);
+            mybutton.setVerticalTextPosition(JButton.BOTTOM);
+            mybutton.setFont(new Font("Sans", Font.BOLD,20));
+            mybutton.setIconTextGap(-5);
+            mybutton.setForeground(Color.pink);
+            mybutton.setBackground(Color.lightGray);
+            mybutton.setBorder(BorderFactory.createDashedBorder(Color.yellow));
+
+
+
+            this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            this.setLayout(null);
+            this.setSize(500,500);
+            this.setVisible(true);
+            this.add(mybutton);
+            this.add(label);
+
+
+        }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if(e.getSource()==mybutton){
+            System.out.println("Poo");
+            label.setVisible(true);
+        }
+    }
+}
